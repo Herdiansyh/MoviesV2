@@ -5,6 +5,10 @@ export default function FormRegister() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [eye, setEye] = useState(false);
+  const handleEye = () => {
+    setEye(!eye);
+  };
   const navigate = useNavigate();
 
   const handleRegister = (e) => {
@@ -61,7 +65,7 @@ export default function FormRegister() {
         </label>
         <div className="relative">
           <input
-            type="password"
+            type={eye ? "text" : "password"}
             id="password"
             className="w-full p-3 rounded-2xl bg-[#272727CC] border border-gray-600 text-white"
             placeholder="Masukkan kata sandi"
@@ -70,8 +74,13 @@ export default function FormRegister() {
           <button
             type="button"
             className="absolute right-3 top-3 text-gray-400 w-5 h-5"
+            onClick={handleEye}
           >
-            👁
+            {eye ? (
+              <i class="fi fi-sr-eye-crossed"></i>
+            ) : (
+              <i class="fi fi-sr-eye"></i>
+            )}
           </button>
         </div>
       </div>
@@ -81,7 +90,7 @@ export default function FormRegister() {
         </label>
         <div className="relative">
           <input
-            type="password"
+            type={eye ? "text" : "password"}
             id="confirm-password"
             className="w-full p-3 rounded-2xl bg-[#272727CC] border border-gray-600 text-white"
             placeholder="Konfirmasi kata sandi"
@@ -90,8 +99,13 @@ export default function FormRegister() {
           <button
             type="button"
             className="absolute right-3 top-3 text-gray-400 w-5 h-5"
+            onClick={handleEye}
           >
-            👁
+            {eye ? (
+              <i class="fi fi-sr-eye-crossed"></i>
+            ) : (
+              <i class="fi fi-sr-eye"></i>
+            )}
           </button>
         </div>
       </div>

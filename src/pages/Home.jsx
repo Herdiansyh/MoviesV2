@@ -41,7 +41,7 @@ export default function Home() {
       <Hero />
       <main className="px-6 md:px-20 py-10 space-y-10">
         <MovieSection
-          title="Melanjutkan Tontonan Film"
+          title="Melanjutkan Tontonan Film series"
           movies={continueMovies}
           type="next"
         />

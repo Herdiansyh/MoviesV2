@@ -7,7 +7,10 @@ export default function FormLogin() {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  const [eye, setEye] = useState(false);
+  const handleEye = () => {
+    setEye(!eye);
+  };
   const handleLogin = (e) => {
     e.preventDefault();
 
@@ -23,9 +26,11 @@ export default function FormLogin() {
       alert("Login berhasil!");
       // Bisa simpan status login ke localStorage
       localStorage.setItem("loggedInUser", JSON.stringify(user));
-      navigate("/"); // Redirect ke halaman home
+      navigate("/home"); // Redirect ke halaman home
     } else {
-      alert("Username atau password salah!");
+      alert(
+        "Username atau password salah! Cek kembali. atau daftar jika belum punya akun"
+      );
       return;
     }
   };
@@ -50,7 +55,7 @@ export default function FormLogin() {
         </label>
         <div className="relative">
           <input
-            type="password"
+            type={eye ? "text" : "password"}
             id="password"
             className="w-full p-3 rounded-2xl bg-[#272727CC] border border-gray-600 text-white"
             placeholder="Masukkan kata sandi"
@@ -58,9 +63,14 @@ export default function FormLogin() {
           />
           <button
             type="button"
-            className="absolute right-3 top-3 text-gray-400 w-5 h-5"
+            className="absolute right-3 top-3 hover:cursor-pointer text-gray-400 w-5 h-5"
+            onClick={handleEye}
           >
-            👁
+            {eye ? (
+              <i class="fi fi-sr-eye-crossed"></i>
+            ) : (
+              <i class="fi fi-sr-eye"></i>
+            )}
           </button>
         </div>
       </div>
