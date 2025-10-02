@@ -5,15 +5,20 @@ import Hero from "../components/Hero";
 import MovieSection from "../components/MovieSection";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
+import {
+  dataHero,
+  dataMovies,
+  imgVertikal,
+  newReleaseMovies,
+  topMovies,
+} from "../assets/datafilm";
 
 export default function Home() {
-  const continueMovies = ["1.png", "2.png", "3.png", "4.png", "5.png"];
-
-  const topRating = ["6.png", "7.png", "8.png", "9.png", "10.png"];
-
-  const trending = ["11.png", "12.png", "1.png", "2.png", "4.png"];
-
-  const newRelease = ["5.png", "7.png", "6.png", "8.png", "9.png"];
+  const Movies = dataMovies;
+  const Heromovies = dataHero;
+  const MoviesVertikal = imgVertikal;
+  const Topmovies = topMovies;
+  const Newmovies = newReleaseMovies;
   const footers = [
     { title: "Genre", links: ["Aksi", "Anak-anak", "Anime", "Horror"] },
     {
@@ -42,15 +47,24 @@ export default function Home() {
       <main className="px-6 md:px-20 py-10 space-y-10">
         <MovieSection
           title="Melanjutkan Tontonan Film series"
-          movies={continueMovies}
-          type="next"
+          moviesvertikal={MoviesVertikal}
+          type="vertikal"
         />
         <MovieSection
           title="Top Rating Film dan Series Hari ini"
-          movies={topRating}
+          movies={Movies}
+          type="movies"
         />
-        <MovieSection title="Film Trending" movies={trending} />
-        <MovieSection title="Rilis Baru" movies={newRelease} />
+        <MovieSection
+          title="Film Trending"
+          type="topmovies"
+          topmovies={Topmovies}
+        />
+        <MovieSection
+          title="Rilis Baru"
+          type="newmovies"
+          newmovies={Newmovies}
+        />
       </main>
       <Footer footers={footers} />
     </div>

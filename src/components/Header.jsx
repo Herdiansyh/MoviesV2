@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -20,17 +20,19 @@ export default function Header() {
   return (
     <header className="bg-[#2d2d2d] flex justify-between items-center px-5 py-4 relative">
       <div className="flex items-center gap-10">
-        <img src="/img/logoChil.png" alt="Logo Chill" className="w-24" />
+        <Link to="/home">
+          <img src="/img/logoChil.png" alt="Logo Chill" className="w-24" />
+        </Link>
         <nav className="hidden md:flex gap-10">
-          <a href="#" className="hover:text-gray-400">
+          <Link to="/" className="hover:text-gray-400 text-gray-300">
             Series
-          </a>
-          <a href="#" className="hover:text-gray-400">
+          </Link>
+          <Link to="/film" className="hover:text-gray-400 text-gray-300">
             Film
-          </a>
-          <a href="#" className="hover:text-gray-400">
+          </Link>
+          <Link to="/daftar-saya" className="hover:text-gray-400 text-gray-300">
             Daftar Saya
-          </a>
+          </Link>
         </nav>
       </div>
 
