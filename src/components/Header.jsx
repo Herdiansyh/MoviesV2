@@ -18,12 +18,21 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-[#2d2d2d] flex justify-between items-center px-5 py-4 relative">
-      <div className="flex items-center gap-10">
+    <header className="bg-[#181A1C] flex justify-between items-center py-[10px] px-[20px] sm:px-[80px] sm:py-[25px] relative">
+      <div className="flex items-center sm:gap-[80px] gap-[12px] ">
         <Link to="/home">
-          <img src="/img/logoChil.png" alt="Logo Chill" className="w-24" />
+          <img
+            src="/img/logoChil.png"
+            alt="Logo Chill"
+            className=" hidden sm:block w-24"
+          />
+          <img
+            src="/img/logoChil2.png"
+            alt="Logo Chill"
+            className="w-7  sm:hidden"
+          />
         </Link>
-        <nav className="hidden md:flex gap-10">
+        <nav className="flex gap-[12px] md:gap-[80px] text-[10px] sm:text-[18px]">
           <Link to="/" className="hover:text-gray-400 text-gray-300">
             Series
           </Link>

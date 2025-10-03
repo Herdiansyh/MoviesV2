@@ -85,19 +85,19 @@ export default function MovieSection({
   }
 
   return (
-    <section className="relative">
+    <section className="relative ">
       <h2 className="text-2xl mb-5">{title}</h2>
 
       <span
         onClick={scrollLeftButton}
-        className="lg:inline-flex hidden hover:bg-gray-500 hover:cursor-pointer text-lg absolute top-1/2 -left-3 z-50 justify-center bg-[rgba(255,255,255,0.1)] rounded-full backdrop-blur-xl p-2 h-11 items-center w-11"
+        className="lg:inline-flex  hidden hover:bg-gray-500 hover:cursor-pointer text-lg absolute top-1/2 -left-3 z-50 justify-center bg-[rgba(255,255,255,0.1)] rounded-full backdrop-blur-xl p-2 h-11 items-center w-11"
       >
         {"<"}
       </span>
 
       <div
         ref={containerRef}
-        className={`flex gap-7 overflow-x-auto p-3 no-scrollbar hover:cursor-grab`}
+        className={`flex gap-7 overflow-x-auto  p-3 no-scrollbar hover:cursor-grab`}
         onMouseDown={handleMouseDown}
         onMouseUp={handleMouseUp}
         onMouseMove={handleMouseMove}
@@ -110,16 +110,23 @@ export default function MovieSection({
         {datamovies.map((movie) => (
           <div
             key={movie.id}
-            className={`flex-shrink-0 relative hover:cursor-pointer ${
+            className={`flex-shrink-0  relative hover:cursor-pointer ${
               type === "vertikal"
                 ? "w-[320px] h-[180px]"
-                : " w-[250px] h-[350px]"
+                : " sm:w-[250px] sm:h-[350px] w-[150px] h-[220px]"
             } rounded-lg bg-gray-700 hover:scale-105 transition-transform duration-300 bg-cover bg-center`}
             style={{ backgroundImage: `url('${movie.image}')` }}
           >
+            {movie.akses === "premium" && (
+              <div className="sm:py[4px] sm:px[10px] py-[1.91px] px-[4.78px] w-[30%] sm:w-[78px] sm:h-[28px] left-3 absolute mt-2 h-5 inline-flex items-center justify-center bg-[#B7A207] rounded-[24px]  text-center ">
+                <span className="text-[0.6rem] sm:text-[14px]">
+                  {movie.akses}
+                </span>
+              </div>
+            )}
             {movie.top && (
-              <div className="absolute w-10 h-15 right-2 bg-red-600 text-center text-wrap text-lg">
-                {movie.top}
+              <div className="w-5 h-10  absolute inline-flex right-2 px-1 py-1 bg-red-600 justify-center items-center text-center">
+                <span className="text-[0.6rem]">{movie.top}</span>
               </div>
             )}
 

@@ -32,6 +32,7 @@ export const dataMovies = [
     pembuat: "Marc Forster",
     url: "https://www.youtube.com/watch?v=trailer-otto",
     top: "Top 6",
+    akses: "premium",
   },
   {
     id: 2,
@@ -54,6 +55,7 @@ export const dataMovies = [
     pembuat: "Matt Reeves",
     url: "https://www.youtube.com/watch?v=trailer-batman",
     top: "Top 7",
+    akses: "premium",
   },
   {
     id: 4,
@@ -108,6 +110,7 @@ export const dataMovies = [
     cast: "TBA",
     pembuat: "Unknown",
     url: "https://www.youtube.com/watch?v=trailer-dirtyboy",
+    akses: "premium",
   },
   {
     id: 9,
@@ -205,6 +208,7 @@ export const topMovies = [
     cast: "Ben Schwartz, Jim Carrey",
     pembuat: "Jeff Fowler",
     url: "https://www.youtube.com/watch?v=trailer-sonic2",
+    akses: "premium",
   },
 ];
 export const newReleaseMovies = [
@@ -229,6 +233,7 @@ export const newReleaseMovies = [
     pembuat: "Nicholas D. Johnson, Will Merrick",
     url: "https://www.youtube.com/watch?v=trailer-missing",
     top: "Top 1",
+    akses: "premium",
   },
   {
     id: 3,
@@ -259,6 +264,7 @@ export const newReleaseMovies = [
     cast: "Patrick Wilson, Vera Farmiga",
     pembuat: "James Wan",
     url: "https://www.youtube.com/watch?v=trailer-conjuring1",
+    akses: "premium",
   },
   {
     id: 6,
@@ -312,6 +318,7 @@ export const trendingMovies = [
     cast: "Yannawoutthi Chanthalungsy, Vilouna Phetmany",
     pembuat: "Mattie Do",
     url: "https://www.youtube.com/watch?v=trailer-longwalk",
+    akses: "premium",
   },
   {
     id: 4,
@@ -332,6 +339,7 @@ export const trendingMovies = [
     cast: "Chris Pratt, Yvonne Strahovski",
     pembuat: "Chris McKay",
     url: "https://www.youtube.com/watch?v=trailer-tomorrowwar",
+    akses: "premium",
   },
   {
     id: 6,

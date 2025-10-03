@@ -51,6 +51,11 @@ export default function Home() {
           type="vertikal"
         />
         <MovieSection
+          title="Persembahan dari chill"
+          topmovies={Topmovies}
+          type="topmovies"
+        />
+        <MovieSection
           title="Top Rating Film dan Series Hari ini"
           movies={Movies}
           type="movies"

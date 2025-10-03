@@ -9,7 +9,6 @@ import "../index.css";
 export default function Hero() {
   const [showVideo, setShowVideo] = useState(false);
   const [currentVideo, setCurrentVideo] = useState("");
-
   const handlePlay = (url) => {
     setCurrentVideo(url);
     setShowVideo(true);
@@ -19,6 +18,7 @@ export default function Hero() {
     setShowVideo(false);
     setCurrentVideo("");
   };
+
   return (
     <section className="relative h-[500px]">
       {/* Modal Video */}
@@ -53,10 +53,10 @@ export default function Hero() {
         {dataHero.map((hero) => (
           <SwiperSlide key={hero.id}>
             <div
-              className="relative h-[500px] flex items-end justify-between p-10 md:p-20 bg-cover bg-center "
+              className={`active:cursor-grabbing relative h-[500px] flex items-end justify-between p-10 md:p-20 bg-cover bg-center `}
               style={{ backgroundImage: `url(${hero.image})` }}
             >
-              <div className="bg-gradient-to-b from-transparent to-[#1a1a1a] absolute inset-0"></div>
+              <div className="bg-gradient-to-b from-transparent  to-[#1a1a1a] absolute inset-0"></div>
               <div className="relative max-w-md z-10">
                 <h1 className="text-3xl mb-2">{hero.title}</h1>
                 <p className="mb-5 text-sm leading-relaxed">{hero.sinopsis}</p>
@@ -73,8 +73,10 @@ export default function Hero() {
                   >
                     Mulai
                   </a>
-                  <button className="bg-gray-700 border hover:cursor-pointer hover:bg-gray-600 border-gray-500 lg:py-3 px-3 py-1 text-sm lg:text-lg rounded-full text-white">
-                    + Selengkapnya
+                  <button className="bg-gray-700 border hover:cursor-pointer hover:bg-gray-600 border-gray-500 lg:py-3 px-3 py-1 sm:w-[185px] sm:h-[45px] w-[144px] h-[25px] flex items-center justify-center rounded-full text-white">
+                    <span className="text-[12px] sm:text-[16px] font-bold leading-[140%] tracking-[0.2px]">
+                      ⓘ Selengkapnya
+                    </span>
                   </button>
                   <span className="border border-white rounded-full lg:px-3 lg:py-2 px-2 py-1 text-sm">
                     18+
