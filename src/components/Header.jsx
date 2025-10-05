@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -33,15 +33,30 @@ export default function Header() {
           />
         </Link>
         <nav className="flex gap-[12px] md:gap-[80px] text-[10px] sm:text-[18px]">
-          <Link to="/" className="hover:text-gray-400 text-gray-300">
+          <NavLink
+            to="/series"
+            className={({ isActive }) =>
+              isActive ? "text-gray-700" : "hover:text-gray-700 text-white"
+            }
+          >
             Series
-          </Link>
-          <Link to="/film" className="hover:text-gray-400 text-gray-300">
+          </NavLink>
+          <NavLink
+            to="/film"
+            className={({ isActive }) =>
+              isActive ? "text-gray-400" : "hover:text-gray-400 text-white"
+            }
+          >
             Film
-          </Link>
-          <Link to="/daftar-saya" className="hover:text-gray-400 text-gray-300">
+          </NavLink>
+          <NavLink
+            to="/daftar-saya"
+            className={({ isActive }) =>
+              isActive ? "text-gray-400" : "hover:text-gray-400 text-white"
+            }
+          >
             Daftar Saya
-          </Link>
+          </NavLink>
         </nav>
       </div>
 

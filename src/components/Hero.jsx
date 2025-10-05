@@ -83,7 +83,7 @@ export default function Hero() {
                   </span>
                 </div>
               </div>
-              <div className="absolute lg:top-105 lg:right-10 top-107 right-8 border border-white rounded-full p-2 flex items-center z-10">
+              <div className="absolute md:top-95 md:right-10 top-107 right-8 border border-white rounded-full p-2 flex items-center z-10">
                 <img
                   src="/img/volume.png"
                   alt="Volume control"

@@ -6,27 +6,13 @@ import MovieSection from "../components/MovieSection";
 import Footer from "../components/Footer";
 import { useNavigate } from "react-router-dom";
 import {
-  dataHero,
   dataMovies,
   imgVertikal,
   newReleaseMovies,
   topMovies,
 } from "../assets/datafilm";
 
-export default function Home() {
-  const Movies = dataMovies;
-  const Heromovies = dataHero;
-  const MoviesVertikal = imgVertikal;
-  const Topmovies = topMovies;
-  const Newmovies = newReleaseMovies;
-  const footers = [
-    { title: "Genre", links: ["Aksi", "Anak-anak", "Anime", "Horror"] },
-    {
-      title: "Bantuan",
-      links: ["FAQ", "Kontak Kami", "Privasi", "Syarat & Ketentuan"],
-    },
-    { title: "Tentang Kami", links: ["Tentang Chill", "Blog"] },
-  ];
+export default function Home({ footer }) {
   const navigate = useNavigate();
   const hasChecked = useRef(false);
 
@@ -41,37 +27,37 @@ export default function Home() {
     }
   }, [navigate]);
   return (
-    <div className="bg-[#1a1a1a] text-white min-h-screen">
+    <div className="bg-[#181A1C] text-white min-h-screen">
       <Header />
       <Hero />
       <main className="px-6 md:px-20 py-10 space-y-10">
         <MovieSection
           title="Melanjutkan Tontonan Film series"
-          moviesvertikal={MoviesVertikal}
+          moviesvertikal={imgVertikal}
           type="vertikal"
         />
         <MovieSection
           title="Persembahan dari chill"
-          topmovies={Topmovies}
+          topmovies={topMovies}
           type="topmovies"
         />
         <MovieSection
           title="Top Rating Film dan Series Hari ini"
-          movies={Movies}
+          movies={dataMovies}
           type="movies"
         />
         <MovieSection
           title="Film Trending"
           type="topmovies"
-          topmovies={Topmovies}
+          topmovies={topMovies}
         />
         <MovieSection
           title="Rilis Baru"
           type="newmovies"
-          newmovies={Newmovies}
+          newmovies={newReleaseMovies}
         />
       </main>
-      <Footer footers={footers} />
+      <Footer footers={footer} />
     </div>
   );
 }
