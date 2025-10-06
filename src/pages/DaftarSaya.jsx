@@ -9,7 +9,7 @@ export default function DaftarSaya({ footer }) {
     <div className="bg-[#181A1C] text-white min-h-screen">
       <Header />
 
-      <main className="px-6 md:px-20 py-10 space-y-10">
+      <main className="px-6 md:px-20 flex flex-col py-10 space-y-10">
         <MovieSection title="Daftar Saya" movies={dataMovies} type="movies" />
         <MovieSection topmovies={topMovies} type="topmovies" />
       </main>

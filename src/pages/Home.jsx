@@ -12,7 +12,7 @@ import {
   topMovies,
 } from "../assets/datafilm";
 
-export default function Home({ footer }) {
+export default function Home({ footer, datahero }) {
   const navigate = useNavigate();
   const hasChecked = useRef(false);
 
@@ -29,7 +29,7 @@ export default function Home({ footer }) {
   return (
     <div className="bg-[#181A1C] text-white min-h-screen">
       <Header />
-      <Hero />
+      <Hero datahero={datahero} />
       <main className="px-6 md:px-20 py-10 space-y-10">
         <MovieSection
           title="Melanjutkan Tontonan Film series"

@@ -10,7 +10,7 @@ import Header from "../components/Header";
 import Hero from "../components/Hero";
 import MovieSection from "../components/MovieSection";
 
-export default function Series({ footer, datahero }) {
+export default function Film({ footer, datahero }) {
   const datamovies = [...dataMovies].sort(() => Math.random() - 0.5);
   const topmovies = [...topMovies].sort(() => Math.random() - 0.5);
   const newmovies = [...newReleaseMovies].sort(() => Math.random() - 0.5);

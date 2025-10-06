@@ -8,8 +8,11 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import DaftarSaya from "./pages/DaftarSaya";
 import Series from "./pages/Series";
+import { dataHero } from "./assets/datafilm";
+import Film from "./pages/Film";
 
 export default function App() {
+  const datahero = dataHero;
   const footers = [
     {
       title: "Genre",
@@ -25,10 +28,20 @@ export default function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="/home" element={<Home footer={footers} />} />
+        <Route
+          path="/home"
+          element={<Home footer={footers} datahero={datahero} />}
+        />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/series" element={<Series footer={footers} />} />
+        <Route
+          path="/series"
+          element={<Series footer={footers} datahero={datahero} />}
+        />
+        <Route
+          path="/film"
+          element={<Film footer={footers} datahero={datahero} />}
+        />
         <Route path="/daftar-saya" element={<DaftarSaya footer={footers} />} />
       </Routes>
     </Router>
