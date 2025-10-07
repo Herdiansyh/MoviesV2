@@ -19,10 +19,10 @@ export default function Hero({ datahero }) {
   };
 
   return (
-    <section className="relative sm:h-[500px] h-[225px]">
+    <section className="relative sm:h-[500px] pt-[20px] h-[225px]">
       {/* Modal Video */}
       {showVideo && (
-        <div className="absolute w-full top-[0%]  bg-opacity-70 flex items-center justify-center z-50 px-4">
+        <div className="absolute w-full top-[20%]  bg-opacity-70 flex items-center justify-center z-50 px-4">
           <div className="relative w-full max-w-3xl h-auto">
             <iframe
               src={currentVideo}

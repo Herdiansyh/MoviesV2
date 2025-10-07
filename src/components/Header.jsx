@@ -18,7 +18,7 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-[#181A1C] flex justify-between items-center py-[10px] px-[20px] sm:px-[80px] sm:py-[25px] relative">
+    <header className="bg-[#181A1C] flex justify-between z-70 w-full fixed  items-center py-[10px] px-[20px] sm:px-[80px] sm:py-[25px] ">
       <div className="flex items-center sm:gap-[80px] gap-[12px] ">
         <Link to="/home">
           <img
