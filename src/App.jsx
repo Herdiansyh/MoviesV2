@@ -10,6 +10,7 @@ import DaftarSaya from "./pages/DaftarSaya";
 import Series from "./pages/Series";
 import { dataHero } from "./assets/datafilm";
 import Film from "./pages/Film";
+import Profile from "./pages/Profile";
 
 export default function App() {
   const datahero = dataHero;
@@ -43,6 +44,7 @@ export default function App() {
           element={<Film footer={footers} datahero={datahero} />}
         />
         <Route path="/daftar-saya" element={<DaftarSaya footer={footers} />} />
+        <Route path="/profile" element={<Profile footer={footers} />} />
       </Routes>
     </Router>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import Header from "../components/Header";
 import MovieSection from "../components/MovieSection";
 import Footer from "../components/Footer";
-import { useMyList } from "../components/context/MyListContext";
+import { useMyList } from "../context/MyListContext";
 
 export default function DaftarSaya({ footer }) {
   const { myList } = useMyList();

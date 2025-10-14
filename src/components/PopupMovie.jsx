@@ -1,5 +1,5 @@
 import React from "react";
-import { useMyList } from "./context/MyListContext";
+import { useMyList } from "../context/MyListContext";
 
 export default function PopupMovie({ movie, onClose }) {
   const { addToMyList, myList, removeFromMyList } = useMyList();

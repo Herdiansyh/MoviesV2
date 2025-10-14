@@ -44,7 +44,7 @@ export default function Header() {
           <NavLink
             to="/film"
             className={({ isActive }) =>
-              isActive ? "text-gray-400" : "hover:text-gray-400 text-white"
+              isActive ? "text-gray-700" : "hover:text-gray-700 text-white"
             }
           >
             Film
@@ -52,7 +52,7 @@ export default function Header() {
           <NavLink
             to="/daftar-saya"
             className={({ isActive }) =>
-              isActive ? "text-gray-400" : "hover:text-gray-400 text-white"
+              isActive ? "text-gray-700" : "hover:text-gray-700 text-white"
             }
           >
             Daftar Saya
