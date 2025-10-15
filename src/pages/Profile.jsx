@@ -6,9 +6,11 @@ export default function Profile({ footer }) {
   return (
     <div className="bg-[#181A1C] text-white min-h-screen">
       <Header />
-      <div className="flex m-auto h-10">
-        <div className="flex gap-3 p-10">
-          <div className="flex flex-col w-full p-5 m-auto">
+      <div className="flex w-full m-auto h-10"> </div>
+
+      <div className="flex gap-3 p-10">
+        <div className="flex  w-full p-5 m-auto gap-6">
+          <div className="flex flex-col w-full">
             <div className="flex items-center gap-2">
               <img
                 src="img/profile.png"
@@ -38,12 +40,22 @@ export default function Profile({ footer }) {
               <label htmlFor="name" className="block">
                 Nama Pengguna
               </label>
-              <button className="w-20 h-10 bg-blue-700">Simpan</button>
               <input type="text" name="name" id="name" placeholder="username" />
             </div>
+            <button className="w-20 h-10 mt-5 rounded-full bg-blue-700">
+              Simpan
+            </button>
           </div>
-          <div className="m-auto"></div>
+          <div className="w-full bg-gray-700 border border-solid rounded-2xl p-2 border-gray-500 h-40">
+            <div className="">
+              <span className="text-xl block">
+                Anda belum berlangganan saat ini!
+              </span>
+              <span className="text-sm">Dapatkan akses!</span>
+            </div>
+          </div>
         </div>
+        <div className=""></div>
       </div>
     </div>
   );
