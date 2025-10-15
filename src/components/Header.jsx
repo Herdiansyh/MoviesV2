@@ -79,9 +79,12 @@ export default function Header() {
             <p className="px-4 py-2 text-sm text-white border-b">
               {user ? `Hi, ${user.username}` : "Belum login"}
             </p>
-            <button className="block px-4 py-2 text-sm hover:text-blue-700 hover:cursor-pointer w-full text-left">
+            <Link
+              to="/profile"
+              className="block px-4 py-2 text-sm hover:text-blue-700 hover:cursor-pointer w-full text-left"
+            >
               <i className="fi fi-sr-user"></i> Profile
-            </button>
+            </Link>
             <button className="block px-4 py-2 text-sm hover:text-blue-700 hover:cursor-pointer w-full text-left">
               <i className="fi fi-sr-star"></i> Premium
             </button>
