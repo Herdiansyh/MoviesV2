@@ -8,12 +8,30 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import DaftarSaya from "./pages/DaftarSaya";
 import Series from "./pages/Series";
-import { dataHero } from "./assets/datafilm";
 import Film from "./pages/Film";
 import Profile from "./pages/Profile";
+import { useFilmData } from "./hooks/useFilmData";
+
+// Loading component
+const LoadingSpinner = () => (
+  <div className="flex justify-center items-center min-h-screen">
+    <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-blue-500"></div>
+  </div>
+);
+
+// Error component
+const ErrorMessage = ({ message }) => (
+  <div className="flex justify-center items-center min-h-screen">
+    <div className="text-red-500 text-center">
+      <h2 className="text-2xl font-bold mb-4">Error Loading Data</h2>
+      <p>{message}</p>
+    </div>
+  </div>
+);
 
 export default function App() {
-  const datahero = dataHero;
+  const { data, loading, error } = useFilmData();
+
   const footers = [
     {
       title: "Genre",
@@ -25,23 +43,32 @@ export default function App() {
     },
     { title: "Tentang Kami", links: ["Tentang Chill", "Blog"] },
   ];
+
+  if (loading) {
+    return <LoadingSpinner />;
+  }
+
+  if (error) {
+    return <ErrorMessage message={error} />;
+  }
+
   return (
     <Router>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route
           path="/home"
-          element={<Home footer={footers} datahero={datahero} />}
+          element={<Home footer={footers} datahero={data.dataHero} />}
         />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route
           path="/series"
-          element={<Series footer={footers} datahero={datahero} />}
+          element={<Series footer={footers} datahero={data.dataHero} />}
         />
         <Route
           path="/film"
-          element={<Film footer={footers} datahero={datahero} />}
+          element={<Film footer={footers} datahero={data.dataHero} />}
         />
         <Route path="/daftar-saya" element={<DaftarSaya footer={footers} />} />
         <Route path="/profile" element={<Profile footer={footers} />} />

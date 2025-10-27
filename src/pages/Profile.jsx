@@ -51,12 +51,22 @@ export default function Profile({ footer }) {
               <span className="text-xl block">
                 Anda belum berlangganan saat ini!
               </span>
-              <span className="text-sm">Dapatkan akses!</span>
+              <span className="text-md">
+                Dapatkan akses tak terbatas ke ribuan film dan series kesukaan
+                kamu!
+              </span>
+            </div>
+            <div className="w-full flex mt-10 justify-end">
+              <button className="bg-gray-800 p-2 rounded-4xl text-sm">
+                Mulai Berlangganan
+              </button>
             </div>
           </div>
         </div>
         <div className=""></div>
       </div>
+
+      <Footer footers={footer} />
     </div>
   );
 }
